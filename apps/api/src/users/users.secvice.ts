@@ -12,9 +12,12 @@ export class UsersService {
   }
 
   async getUserByEmail(email: string) {
-    return await this.usersRepository.findOne({
-      email,
-    });
+    return await this.usersRepository.findOne(
+      {
+        email,
+      },
+      false,
+    );
   }
 
   async getUsers() {

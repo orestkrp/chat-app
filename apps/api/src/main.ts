@@ -11,6 +11,7 @@ async function bootstrap() {
     .setTitle('Auth API')
     .setDescription('The authentication API description')
     .setVersion('1.0')
+    .addBearerAuth({ type: 'apiKey', name: 'Authorization', in: 'header' })
     .build();
   const document = SwaggerModule.createDocument(app, config);
 
